@@ -1,108 +1,34 @@
 # ArcLayout
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ArcLayout-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/4694)
-
-With Arc Layout explore new styles and approaches on material design
-
-[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/video1.gif)](https://www.github.com/florent37/ArcLayout)
-
 # Usage
 
 ```xml
-<com.github.florent37.arclayout.ArcLayout
-         android:layout_width="match_parent"
-         android:layout_height="200dp"
-         app:arc_cropDirection="cropOutside|cropInside"
-         app:arc_height="90dp"
-         app:arc_padding="30dp"
-         >
+<xyz.sahildave.arclayout.ArcLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/arc_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:arc_cropCurve="cropConvex"
+    app:arc_height="48dp"
+    app:arc_position="top">
 
          <!-- YOUR CONTENT -->
 
-</com.github.florent37.arclayout.ArcLayout>
+</xyz.sahildave.arclayout.ArcLayout>
 ```
 
 # Sample
 
-## Crop Outside
+[![screen](https://raw.githubusercontent.com/sahildave/ArcLayout/master/media/sample.png)](https://www.github.com/sahildave/ArcLayout)
 
-```xml
-<com.github.florent37.arclayout.ArcLayout
-          android:layout_width="match_parent"
-          android:layout_height="200dp"
-          app:arc_cropDirection="cropOutside"
-          app:arc_height="90dp"
-          app:arc_padding="30dp"
-          >
- 
-          <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/road" /> 
-                
- </com.github.florent37.arclayout.ArcLayout>        
-```
-
-[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/outside_small.png)](https://www.github.com/florent37/ArcLayout)
-
-## Crop Inside
-
-```xml
-<com.github.florent37.arclayout.ArcLayout
-          android:layout_width="match_parent"
-          android:layout_height="200dp"
-          app:arc_cropDirection="cropInside"
-          app:arc_height="90dp"
-          app:arc_padding="30dp"
-          >
- 
-          <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/road" /> 
-                
- </com.github.florent37.arclayout.ArcLayout>        
-```
-
-[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/inside_small.png)](https://www.github.com/florent37/ArcLayout)
-
-# KenBurns
-
-Using [https://github.com/flavioarfaria/KenBurnsView](https://github.com/flavioarfaria/KenBurnsView)
-
-[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/video1.gif)](https://www.github.com/florent37/ArcLayout)
-
-```xml
-<com.github.florent37.arclayout.ArcLayout
-          android:layout_width="match_parent"
-          android:layout_height="200dp"
-          app:arc_cropDirection="cropInside"
-          app:arc_height="90dp"
-          app:arc_padding="30dp"
-          >
-
-        <com.flaviofaria.kenburnsview.KenBurnsView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/road"
-            />
-
-        ...
-
-</com.github.florent37.arclayout.ArcLayout>
-```
-
-#Download
-
-In your module [![Download](https://api.bintray.com/packages/florent37/maven/ArcLayout/images/download.svg)](https://bintray.com/florent37/maven/ArcLayout/_latestVersion)
-```groovy
-compile 'com.github.florent37:arclayout:1.0.1'
-```
 
 #Inspirations
+
+**Forked from**
+
+[ArcLayout by Florent37](https://github.com/florent37/ArcLayout)
 
 **Cinema Application by Zsolt Szilvai**
 
@@ -113,25 +39,6 @@ I'd appreciate any feedback.
 [https://material.uplabs.com/posts/cinema-application-interface](https://material.uplabs.com/posts/cinema-application-interface)
 
 [![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/materialup.png)](https://material.uplabs.com/posts/cinema-application-interface)
-
-
-#Credits
-
-Author: Florent Champigny [http://www.florentchampigny.com/](http://www.florentchampigny.com/)
-
-<a href="https://plus.google.com/+florentchampigny">
-  <img alt="Follow me on Google+"
-       src="https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/gplus.png" />
-</a>
-<a href="https://twitter.com/florent_champ">
-  <img alt="Follow me on Twitter"
-       src="https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/twitter.png" />
-</a>
-<a href="https://www.linkedin.com/in/florentchampigny">
-  <img alt="Follow me on LinkedIn"
-       src="https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/linkedin.png" />
-</a>
-
 
 License
 --------
