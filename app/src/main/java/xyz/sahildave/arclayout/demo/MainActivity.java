@@ -1,4 +1,4 @@
-package com.github.florent37.sample.arclayout;
+package xyz.sahildave.arclayout.demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

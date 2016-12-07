@@ -1,10 +1,8 @@
-package com.github.florent37.arclayout;
+package xyz.sahildave.arclayout;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Outline;
-import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -15,7 +13,6 @@ import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
 
 public class ArcLayout extends FrameLayout {
-
     private ArcLayoutSettings settings;
 
     private int height = 0;
@@ -56,21 +53,36 @@ public class ArcLayout extends FrameLayout {
         final Path path = new Path();
 
         float arcHeight = settings.getArcHeight();
-
-        if (settings.isCropInside()) {
-            path.moveTo(0, 0);
-            path.lineTo(0, height - arcHeight);
-            path.quadTo(width / 2, height + arcHeight,
-                    width, height - arcHeight);
-            path.lineTo(width, 0);
-            path.close();
+        if (settings.isDirectionBottom()) {
+            if (settings.isCropConvex()) {
+                path.moveTo(0, 0);
+                path.lineTo(0, height - arcHeight);
+                path.quadTo(width / 2, height + arcHeight, width, height - arcHeight);
+                path.lineTo(width, 0);
+                path.close();
+            } else {
+                path.moveTo(0, 0);
+                path.lineTo(0, height);
+                path.quadTo(width / 2, height - 2 * arcHeight, width, height);
+                path.lineTo(width, 0);
+                path.close();
+            }
         } else {
-            path.moveTo(0, 0);
-            path.lineTo(0, height);
-            path.quadTo(width / 2, height - 2 * arcHeight,
-                    width, height);
-            path.lineTo(width, 0);
-            path.close();
+            if (settings.isCropConvex()) {
+                path.moveTo(0, arcHeight);
+                path.lineTo(0, height);
+                path.lineTo(width, height);
+                path.lineTo(width, arcHeight);
+                path.quadTo(width / 2, (-1 * arcHeight), 0, arcHeight);
+                path.close();
+            } else {
+                path.moveTo(0, 0);
+                path.lineTo(0, height);
+                path.lineTo(width, height);
+                path.lineTo(width, 0);
+                path.quadTo(width / 2, 2 * arcHeight, 0, 0);
+                path.close();
+            }
         }
         return path;
     }
@@ -93,7 +105,7 @@ public class ArcLayout extends FrameLayout {
 
             clipPath = createClipPath();
             ViewCompat.setElevation(this, settings.getElevation());
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && settings.isCropInside()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && settings.isCropConvex()) {
                 ViewCompat.setElevation(this, settings.getElevation());
                 setOutlineProvider(new ViewOutlineProvider() {
                     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

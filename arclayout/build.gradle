@@ -28,16 +28,16 @@ dependencies {
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'ArcLayout'
-    orgName = 'florent37'
+    orgName = 'sahildave'
 
-    publishedGroupId = 'com.github.florent37'
+    publishedGroupId = 'xyz.sahildave'
     libraryName = 'ArcLayout'
     artifact = 'arclayout'
 
     libraryDescription = 'ArcLayout'
 
-    siteUrl = 'https://github.com/florent37/ArcLayout'
-    gitUrl = 'https://github.com/florent37/ArcLayout.git'
+    siteUrl = 'https://github.com/sahildave/ArcLayout'
+    gitUrl = 'https://github.com/sahildave/ArcLayout.git'
 
     libraryVersion = rootProject.ext.libraryVersion
 
