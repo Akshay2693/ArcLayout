@@ -21,7 +21,7 @@
 
 # Sample
 
-[![screen](https://raw.githubusercontent.com/sahildave/ArcLayout/master/media/sample.png)](https://www.github.com/sahildave/ArcLayout)
+![](/media/sample.png?raw=true)
 
 
 #Inspirations
