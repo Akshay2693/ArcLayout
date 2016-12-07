@@ -8,11 +8,14 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
 
 public class ArcLayout extends FrameLayout {
+    private static final String TAG = "ArcLayout";
+
     private ArcLayoutSettings settings;
 
     private int height = 0;
@@ -90,6 +93,7 @@ public class ArcLayout extends FrameLayout {
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
+        Log.d(TAG, "onLayout() called with: changed = [" + changed + "], left = [" + left + "], top = [" + top + "], right = [" + right + "], bottom = [" + bottom + "]");
         if (changed) {
             calculateLayout();
         }
@@ -118,9 +122,18 @@ public class ArcLayout extends FrameLayout {
         }
     }
 
+    public ArcLayoutSettings getSettings() {
+        return settings;
+    }
+
+    public void setSettings(final ArcLayoutSettings settings) {
+        this.settings = settings;
+        invalidate();
+    }
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
+        Log.d(TAG, "dispatchDraw() called with: canvas = [" + canvas + "]");
         canvas.save();
 
         canvas.clipPath(clipPath);

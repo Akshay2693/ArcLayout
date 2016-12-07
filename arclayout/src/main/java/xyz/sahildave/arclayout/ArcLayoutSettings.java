@@ -12,10 +12,10 @@ import android.util.TypedValue;
 public class ArcLayoutSettings {
     private static final String TAG = "ArcLayoutSettings";
 
-    private final static int CROP_CONVEX = 1;
-    private final static int CROP_CONCAVE = 2;
-    private final static int DIRECTION_BOTTOM = 1;
-    private final static int DIRECTION_TOP = 2;
+    public final static int CROP_CONVEX = 1;
+    public final static int CROP_CONCAVE = 2;
+    public final static int DIRECTION_BOTTOM = 1;
+    public final static int DIRECTION_TOP = 2;
 
     private static final int DEFAULT_ARC_HEIGHT = 32;
 
@@ -54,6 +54,14 @@ public class ArcLayoutSettings {
 
     public boolean isCropConvex() {
         return cropConvex;
+    }
+
+    public void setIsCropConvex(final boolean cropConvex) {
+        this.cropConvex = cropConvex;
+    }
+
+    public void setIsDirectionBottom(final boolean directionBottom) {
+        this.directionBottom = directionBottom;
     }
 
     public boolean isDirectionBottom() {
