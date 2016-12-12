@@ -21,9 +21,9 @@ allprojects {
 }
 
 ext {
-    sdk = 24
-    buildTools = "24.0.2"
+    sdk = 25
+    buildTools = "25"
     minSdk = 14
-    libraryVersion = "1.0.1"
+    libraryVersion = "1.0.0"
     supportVersion = "25.0.0"
 }

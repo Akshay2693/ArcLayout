@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -41,9 +44,9 @@ ext {
 
     libraryVersion = rootProject.ext.libraryVersion
 
-    developerId = 'florent37'
-    developerName = 'Florent Champigny'
-    developerEmail = 'champigny.florent@gmail.com'
+    developerId = 'sahildave'
+    developerName = 'Sahil Dave'
+    developerEmail = 'sahildave1991@gmail.com'
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'

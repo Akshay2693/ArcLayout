@@ -19,7 +19,6 @@ public class ArcLayoutSettings {
 
     private static final int DEFAULT_ARC_HEIGHT = 32;
 
-    private final int arcColor;
     private boolean cropConvex = true;
     private boolean directionBottom = true;
     private float arcHeight;
@@ -33,7 +32,6 @@ public class ArcLayoutSettings {
     ArcLayoutSettings(Context context, AttributeSet attrs) {
         TypedArray styledAttributes = context.obtainStyledAttributes(attrs, R.styleable.ArcHeader, 0, 0);
         arcHeight = styledAttributes.getDimension(R.styleable.ArcHeader_arc_height, dpToPx(context, DEFAULT_ARC_HEIGHT));
-        arcColor = styledAttributes.getColor(R.styleable.ArcHeader_arc_color, Color.TRANSPARENT);
 
         final int cropDirection = styledAttributes.getInt(R.styleable.ArcHeader_arc_cropCurve, CROP_CONVEX);
         cropConvex = (cropDirection & CROP_CONVEX) == CROP_CONVEX;
@@ -70,9 +68,5 @@ public class ArcLayoutSettings {
 
     public float getArcHeight() {
         return arcHeight;
-    }
-
-    public int getArcColor() {
-        return arcColor;
     }
 }

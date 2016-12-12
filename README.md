@@ -1,6 +1,13 @@
 # ArcLayout
 
+Arc Layout is a view group with which you can add a arc-shaped container in your layout.
+Two main variables are the direction and the curvature of the arc. Check the example below.
+
 # Usage
+
+```groovy
+    compile 'xyz.sahildave:arclayout:1.0.0'
+```
 
 ```xml
 <xyz.sahildave.arclayout.ArcLayout
@@ -10,9 +17,9 @@
     android:id="@+id/arc_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:arc_cropCurve="cropConvex"
+    app:arc_cropCurve="cropConvex|cropConcave"
     app:arc_height="48dp"
-    app:arc_position="top">
+    app:arc_position="top|bottom">
 
          <!-- YOUR CONTENT -->
 
@@ -43,7 +50,7 @@ I'd appreciate any feedback.
 License
 --------
 
-    Copyright 2016 florent37, Inc.
+    Copyright 2016 Sahil Dave, Inc.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

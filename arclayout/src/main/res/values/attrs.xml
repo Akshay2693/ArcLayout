@@ -2,7 +2,6 @@
 <resources>
     <declare-styleable name="ArcHeader">
         <attr name="arc_height" format="dimension"/>
-        <attr name="arc_color" format="color"/>
         <attr name="arc_cropCurve" format="enum">
             <enum name="cropConvex" value="1"/>
             <enum name="cropConcave" value="2"/>
